@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet SHIFUMI</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body style="background-color: rgb(100,149,237);">
+
+        <!-- en-tête -->
+        <header>
+            <h1 style="text-align: center;">ShiFuMi</h1>
+        </header>
+
+        <div class="bordure"></div>
+
+        <div class="score">
+            <div class="score_user"></div>
+            <div class="score_computer"></div>
+        </div>
+
+        <!-- Afficher les scores des joueurs -->
+        <div class="row">
+            <div class="col-4">
+                <div class="utilisateur">
+                    <div class="cadre_entiers taille">
+                        <div class="cadre_cercle" id="led1_user"></div>
+                        <div class="cadre_cercle" id="led2_user"></div>
+                        <div class="cadre_cercle" id="led3_user"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="manche">
+                    <div class="cadre2 taille2 text-center">
+                        <h1 id="round">0</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="ordinateur">
+                    <div class="cadre_entiers taille">
+                        <div class="cadre_cercle" id="led1_ordi"></div>
+                        <div class="cadre_cercle" id="led2_ordi"></div>
+                        <div class="cadre_cercle" id="led3_ordi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Afficher les noms des joueurs-->
+        <div class="row text-center">
+            <div class="col-4 mb-4">
+                <div class="nom_utilisateur">
+                    <p id="bonjour">Julien</p>
+                </div>
+            </div>
+
+            <div class="col-4"></div>
+
+            <div class="col-4">
+                <div class="nom_ordinateur">
+                    <p>IAMON</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Reporter les images pierre feuille ciseaux dans les cadres -->
+        <div class="row mb-4">
+            <div class="col-4">
+                <div class="mettre_interieur">
+                    <div class="cadre_entiers taille2">
+                        <img onclick="test();" id="choice_user" src="./interro.jpg" alt="">
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-4 image_versus">
+                <div class="cadre_entiers taille2">
+                    <img id="image_versus" src="./vs-icon.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="col-4 mettre_interieur">
+                <div class="cadre_entiers taille2">
+                    <img id="choice_computer" src="./interro.jpg" alt="" >
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Images pierre feuille ciseaux -->
+        <div class="row">
+            <div class="col-4">
+                <div class="signe_ordinateur">
+                    <div class="cadre_entiers taille2">
+                        <img src="./rock.png" alt="pierre" onclick="changeImage('pierre'); getRandomChoiceComputer(); manche();">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="signe_ordinateur">
+                    <div class="cadre_entiers taille2">
+                        <img src="./paper.png" alt="feuille" onclick="changeImage('feuille'); getRandomChoiceComputer(); manche();">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="signe_ordinateur">
+                    <div class="cadre_entiers taille2">
+                        <img src="./scissors.png" alt="ciseaux" onclick="changeImage('ciseaux'); getRandomChoiceComputer(); manche();">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
